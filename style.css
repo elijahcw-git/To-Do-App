@@ -1,8 +1,31 @@
 html {
-    background-color: burlywood;
+    background-color: rgb(75, 114, 75);
+}
+
+body {
     text-align: center;
 }
 
-ul {
-    list-style: none;
+.container {
+    width: 50%;
+    margin: auto;
+    border: 2px solid black;
 }
+
+ul {
+    list-style-type: none;
+    text-align: left;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid red;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    background-color: rgb(154, 219, 219);   
+    border: 2px solid green;
+}
+

@@ -1,33 +1,58 @@
+const textInput = document.querySelector('.textInput');
+const submitBtn = document.querySelector('.submitBtn');
+const toDoList = document.querySelector('.toDoList');
 
-const submitBtn = document.querySelector('.submitBtn')
-const toDoList = document.querySelector('.toDoList')
-
-
-// submitBtn.addEventListener('click', (e) => {
-// })
-
-submitBtn.addEventListener('click', (e) => {
-   
-    addToDo();
+submitBtn.addEventListener('click', (e) =>{   
     e.preventDefault();
-
+    addToDoItem();
 })
 
-
-
-
-function addToDo(){
-    let newItem = document.querySelector('.textInput')
+function addToDoItem(){
+    //create useable node;
     let node = document.createElement('li');
-    let textNode = document.createTextNode(newItem.value);
-    node.appendChild(textNode)
-    toDoList.appendChild(node)
-    newItem.value = ''
-    node.addEventListener('click', (e)=> {
-            node.style.textDecoration = "line-through"
+    node.setAttribute('class', 'toDoEntry');
+
+    //create checkbox
+
+    let checkBox = document.createElement("input");
+    checkBox.setAttribute('type', 'checkbox');
+    checkBox.setAttribute('class', 'checkBox');
+    node.appendChild(checkBox);
+    
+    
+    //create text entry
+
+    let nodeText = document.createTextNode(textInput.value);
+    let toDoEntry = document.querySelector('.toDoEntry')
+    node.appendChild(nodeText);
+    toDoList.appendChild(node);
+    
+    //clear input back to placeholder value
+
+    textInput.value = '';
+
+    //create delete Button
+
+    let delBtn = document.createElement('button');
+    delBtn.setAttribute('class', 'delBtn');
+    let delBtnText = document.createTextNode('Delete');
+    delBtn.appendChild(delBtnText);
+    node.appendChild(delBtn);
+
+    //create delete function
+    
+    delBtn.addEventListener('click', (e) =>{
+        e.preventDefault();
+        e.target.parentElement.remove();
     })
-}
 
-function deleteToDo(){
+    //create checkbox
 
+    checkBox.addEventListener('change', (e) =>{
+        if(e.target.checked){
+            node.style.textDecoration = "line-through";
+        } else node.style.textDecoration = "none";
+        
+    })
+    
 }
