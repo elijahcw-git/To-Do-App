@@ -4,7 +4,7 @@
 
 #### You can test this program [here](https://elijahcw-git.github.io/To-Do-App/)
 
-![To Do Sample](./images/toDoTN.png)
+![To Do Sample](images/toDoTN.png)
 
 ## Summary
 
