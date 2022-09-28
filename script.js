@@ -1,8 +1,9 @@
 const textInput = document.querySelector('.textInput');
 const submitBtn = document.querySelector('.submitBtn');
 const toDoList = document.querySelector('.toDoList');
+let checked = false;
 
-submitBtn.addEventListener('click', (e) =>{   
+submitBtn.addEventListener('click', (e) =>{  
     e.preventDefault();
     addToDoItem();
 })
@@ -15,7 +16,7 @@ function addToDoItem(){
     createDeleteButton(node);      
 }
 
-function getTextInput(node){
+function getTextInput(node){  
     const nodeText = document.createTextNode(textInput.value);
     const toDoEntry = document.querySelector('.toDoEntry')
     node.appendChild(nodeText);
@@ -31,7 +32,11 @@ function createCheckBox(node){
     checkBox.addEventListener('change', (e) =>{
         if(e.target.checked){
             e.target.parentElement.style.textDecoration = "line-through";
-        } else e.target.parentElement.style.textDecoration = "none";       
+            checked = true;
+        } else {
+            e.target.parentElement.style.textDecoration = "none";
+            checked = false;
+        }       
     })
 }
 
@@ -41,7 +46,7 @@ function createDeleteButton(node){
     delBtn.innerHTML = '<i class="fa fa-trash-o" style="font-size:24px"></i>';
     node.appendChild(delBtn);
     delBtn.addEventListener('click', (e) =>{
-        e.preventDefault();
-        delBtn.parentElement.remove();
+        e.preventDefault();    
+        checked ? delBtn.parentElement.remove() : alert('You must check off your to do before removing!') 
     })
 }
