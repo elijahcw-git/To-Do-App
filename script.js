@@ -8,7 +8,6 @@ submitBtn.addEventListener('click', (e) =>{
 })
 
 function addToDoItem(){
-    //create useable node;
     const node = document.createElement('li');
     node.setAttribute('class', 'toDoEntry');
     createCheckBox(node);
