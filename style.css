@@ -1,15 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 html {
-    background-color: rgb(75, 114, 75);
+    background-color: black;
 }
 
 body {
     text-align: center;
+    margin: auto;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .container {
     width: 50%;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    background-color: white;
     border: 2px solid black;
+    height: 500px;
+    border-radius: 5%;
 }
 
 ul {
@@ -18,14 +27,13 @@ ul {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid red;
+    font-size: 22px;
 }
 
 li {
     display: flex;
     justify-content: space-between;
     margin-top: 5px;
-    background-color: rgb(154, 219, 219);   
-    border: 2px solid green;
+    background-color: rgb(232, 250, 128);
+    border-radius: 3px;
 }
-
